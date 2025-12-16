@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra Store</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #ffe1f0, #e3f2ff);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, #ff4f9a, #eaaee0);
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .name {
+            font-size: 32px;
+            color: white;
+            font-weight: 700;
+        }
+
+        #menu {
+            display: none;
+        }
+
+        .burger {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .link {
+            list-style: none;
+            display: flex;
+            padding: 0;
+            margin: 0;
+        }
+
+        .link li {
+            margin: 0 20px;
+        }
+
+        .link a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        .cart a {
+            font-size: 26px;
+            text-decoration: none;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .link {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: #ff8bd4;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .link li {
+                margin: 15px 0;
+            }
+
+            .burger {
+                display: block;
+            }
+        }
+
+        #menu:checked + .burger + .link {
+            display: flex;
+        }
+
+        section {
+            padding: 50px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #ff4f9a;
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .price {
+            color: #ff4f9a;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .card button {
+            padding: 10px 18px;
+            background: #ff4f9a;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: auto;
+        }
+
+        .category-box {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .category {
+            background: white;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .deal {
+            background: white;
+            margin: 15px auto;
+            padding: 20px;
+            width: 70%;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact input, .contact textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="name">SANTRA</div>
+    <input type="checkbox" id="menu">
+    <label for="menu" class="burger">&#9776;</label>
+    <ul class="link">
+        <li><a href="#products">Products</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#deals">Deals</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="cart"><a href="#">🛒</a></div>
+</nav>
+
+<section id="products">
+    <h1>Products</h1>
+    <div class="products">
+
+        <div class="card">
+            <img src="https://tigc.in/cdn/shop/files/catalog_images_2F1224-PLZPSF-03A_2F1224-PLZPSF-03A_20_1.jpg">
+            <h3>Men Polo T-Shirt</h3>
+            <p class="price">₹799</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://5.imimg.com/data5/ANDROID/Default/2025/7/527746376/AU/QV/AM/247305568/product-jpeg-500x500.jpg">
+            <h3>Women Plazo</h3>
+            <p class="price">₹1499</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://jimmyluxury.in/cdn/shop/files/IMG_2140_e9d66758-aa33-4baa-97ee-3674b8e853d5.webp">
+            <h3>Denim Jeans</h3>
+            <p class="price">₹1299</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://powerlook.in/cdn/shop/files/dp11167650_1.jpg">
+            <h3>Baggy Jeans</h3>
+            <p class="price">₹2999</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://abrosshoes.com/cdn/shop/files/original-imah6aj6fy3gyye5.jpg">
+            <h3>Sports Shoes</h3>
+            <p class="price">₹2499</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://www.sfbags.com/cdn/shop/files/techfolio-backpack-table_1ede7a8a-87f1-462a-87b0-b6cfa222a5c3.jpg">
+            <h3>Tech Backpack</h3>
+            <p class="price">₹3599</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://i.etsystatic.com/57724284/r/il/8ebd0d/6993295946/il_300x300.6993295946_6c8z.jpg">
+            <h3>Itachi Watch</h3>
+            <p class="price">₹1299</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1564227050211-b6061acd4158">
+            <h3>Badminton</h3>
+            <p class="price">₹1499</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://assets.myntassets.com/dpr_2,q_60,w_210,c_limit,fl_progressive/assets/images/2025/DECEMBER/1/UDVBay06_54a905047483480b8bd5003b3158ac1e.jpg">
+            <h3>Sunscreen</h3>
+            <p class="price">₹299</p>
+            <button>Buy Now</button>
+        </div>
+
+        <div class="card">
+            <img src="https://joypersonalcare.com/cdn/shop/files/Charcoal_Facewash_100ml_75286c88-f944-45f1-a066-ea0aca3dcacb.jpg">
+            <h3>Facewash</h3>
+            <p class="price">₹249</p>
+            <button>Buy Now</button>
+        </div>
+
+    </div>
+</section>
+
+<section id="categories">
+    <h2>Categories</h2>
+    <div class="category-box">
+        <div class="category">Men</div>
+        <div class="category">Women</div>
+        <div class="category">Kids</div>
+        <div class="category">Footwear</div>
+        <div class="category">Accessories</div>
+    </div>
+</section>
+
+<section id="deals">
+    <h2>Deals</h2>
+    <div class="deal">Flat 50% OFF on Winter Wear</div>
+    <div class="deal">Buy 2 Get 1 Free on T-Shirts</div>
+    <div class="deal">Extra 20% OFF with Bank Offers</div>
+</section>
+
+<section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <input type="text" placeholder="Your Name">
+    <input type="email" placeholder="Email">
+    <textarea rows="4" placeholder="Message"></textarea>
+    <button>Send Message</button>
+</section>
+
+</body>
+</html>
